@@ -1,0 +1,24 @@
+CREATE USER 'abdelmenem'@'localhost' IDENTIFIED BY 'abdelmenem';
+
+create database `supermarket_db`;
+
+GRANT ALL PRIVILEGES ON `supermarket_db` . * TO 'abdelmenem'@'localhost';
+
+FLUSH PRIVILEGES;
+
+use `supermarket_db`;
+
+DROP TABLE IF EXISTS `supermarkets`;
+CREATE TABLE `supermarkets` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `aname` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `ename` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `address` varchar(900) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `image` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+LOCK TABLES `supermarkets` WRITE;
+
+UNLOCK TABLES;
+
